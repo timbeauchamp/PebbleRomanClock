@@ -87,21 +87,28 @@ void romanStrFromTime(char* buffer, int numChars, struct tm *tick_time, bool use
     char strHrs[8];
     char strMin[8];
     
-    if(clock_is_24h_style() == true) 
-    {
-        getRoman(strHrs, 8, tick_time->tm_hour);
-    }
-    else
-    {
-        getRoman(strHrs, 8, tick_time->tm_hour % 12);        
-    }
+    int hours = tick_time->tm_hour;
+    int mins = tick_time->tm_min;
     
-    getRoman(strMin, 8, tick_time->tm_min);
-    
+    if(clock_is_24h_style() == false) 
+    {
+        hours %= 12;        
+    }
+    if(hours == 0)
+    { 
+        hours = 12;
+    }
+            
+    getRoman(strHrs, 8, hours);
     strcpy(buffer,strHrs);
-    strcat(buffer,":");
-    strcat(buffer,strMin);
-
+    
+    if(mins != 0)
+    {
+        getRoman(strMin, 8, mins);
+    
+        strcat(buffer,":");
+        strcat(buffer,strMin);
+    }
 }
 
 void romanDateStrFromTime(char* buffer, int numChars, struct tm *tick_time)
