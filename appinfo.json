@@ -1,0 +1,35 @@
+{
+    "appKeys": {},
+    "capabilities": [
+        ""
+    ],
+    "companyName": "tim@openfermenter.org",
+    "longName": "RomanClock",
+    "projectType": "native",
+    "resources": {
+        "media": [
+            {
+                "file": "images/RomanScreenshot.png",
+                "menuIcon": true,
+                "name": "IMAGE_BACKGROUND_SMALL",
+                "type": "png"
+            },
+            {
+                "file": "images/background.png",
+                "name": "IMAGE_BACKGROUND",
+                "type": "png"
+            }
+        ]
+    },
+    "sdkVersion": "3",
+    "shortName": "RomanClock",
+    "targetPlatforms": [
+        "aplite",
+        "basalt"
+    ],
+    "uuid": "7ab53041-ebd3-447c-9946-6fccac15a238",
+    "versionLabel": "1.1",
+    "watchapp": {
+        "watchface": true
+    }
+}
